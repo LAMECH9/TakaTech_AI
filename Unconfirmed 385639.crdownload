@@ -1,0 +1,138 @@
+# Paste the entire Streamlit app code from my previous response here
+import streamlit as st
+import pandas as pd
+import numpy as np
+import tensorflow as tf
+import joblib
+import cv2
+from datetime import datetime
+from PIL import Image
+
+# Set page config
+st.set_page_config(page_title="Methane Mitigation System", page_icon="🌱", layout="wide")
+
+# Load models and preprocessing objects
+@st.cache_resource
+def load_models():
+    mitigation_model = tf.keras.models.load_model('methane_mitigation_model.h5')
+    emission_model = tf.keras.models.load_model('methane_emission_model.h5')
+    image_model = tf.keras.models.load_model('waste_composition_model.h5')
+    scaler = joblib.load('scaler.pkl')
+    scaler_reg = joblib.load('scaler_reg.pkl')
+    label_encoders = joblib.load('label_encoders.pkl')
+    return mitigation_model, emission_model, image_model, scaler, scaler_reg, label_encoders
+
+mitigation_model, emission_model, image_model, scaler, scaler_reg, label_encoders = load_models()
+
+# Define numerical columns
+num_cols = ['waste_amount_kg', 'temperature_c', 'humidity_pct', 'storage_days', 'day_of_week', 'month']
+
+# Prediction function
+def predict_optimal_mitigation(waste_amount, waste_type, temperature, humidity, storage_days, current_treatment, date):
+    input_data = pd.DataFrame({
+        'date': [date],
+        'waste_amount_kg': [waste_amount],
+        'waste_type': [waste_type],
+        'temperature_c': [temperature],
+        'humidity_pct': [humidity],
+        'storage_days': [storage_days],
+        'current_treatment': [current_treatment]
+    })
+
+    # Preprocess input data
+    input_data['date'] = pd.to_datetime(input_data['date'])
+    input_data['day_of_week'] = input_data['date'].dt.dayofweek
+    input_data['month'] = input_data['date'].dt.month
+    input_data = input_data.drop('date', axis=1)
+
+    # Encode categorical variables
+    for col in ['waste_type', 'current_treatment']:
+        input_data[col] = label_encoders[col].transform(input_data[col])
+
+    # Scale numerical features
+    input_data[num_cols] = scaler.transform(input_data[num_cols])
+
+    # Predict methane emission
+    methane_pred = emission_model.predict(input_data, verbose=0)[0][0]
+
+    # Predict optimal mitigation
+    mitigation_pred = mitigation_model.predict(input_data, verbose=0)
+    mitigation_class = np.argmax(mitigation_pred, axis=1)[0]
+    mitigation_str = label_encoders['optimal_mitigation'].inverse_transform([mitigation_class])[0]
+
+    return {
+        'predicted_methane_kg': float(methane_pred),
+        'recommended_mitigation': mitigation_str,
+        'mitigation_probabilities': {k: float(v) for k, v in zip(
+            label_encoders['optimal_mitigation'].classes_, mitigation_pred[0]
+        )}
+    }
+
+# Image classification function
+def classify_waste_image(image):
+    img = np.array(image)
+    img = cv2.resize(img, (224, 224))
+    img = img / 255.0
+    img = np.expand_dims(img, axis=0)
+    pred = image_model.predict(img, verbose=0)
+    classes = ['fruit', 'mixed', 'vegetable']
+    predicted_class = classes[np.argmax(pred)]
+    probabilities = {k: float(v) for k, v in zip(classes, pred[0])}
+    return predicted_class, probabilities
+
+# Streamlit interface
+st.title("Methane Gas Mitigation from Market Food Waste")
+st.markdown("Optimize food waste management to reduce methane emissions using deep learning.")
+
+# Input form
+st.header("Input Waste Parameters")
+col1, col2 = st.columns(2)
+
+with col1:
+    waste_amount = st.number_input("Waste Amount (kg)", min_value=0.5, max_value=100.0, value=50.0)
+    waste_type = st.selectbox("Waste Type", options=label_encoders['waste_type'].classes_)
+    temperature = st===============================number_input("Temperature (°C)", min_value 5.0, max_value=35.0, value=25.0)
+
+with col2:
+    humidity = st.number_input("Humidity (%)", min_value=30.0, max_value=95.0, value=70.0)
+    storage_days = st.number_input("Storage Days", min_value=1, max_value=14, value=5)
+    current_treatment = st.selectbox("Current Treatment", options=label_encoders['current_treatment'].classes_)
+
+date = st.date_input("Date", value=datetime.now())
+
+# Image upload
+st.header("Upload Waste Image (Optional)")
+uploaded_image = st.file_uploader("Upload an image of the waste", type=['jpg', 'jpeg', 'png'])
+
+# Predict button
+if st.button("Predict"):
+    # Text-based prediction
+    result = predict_optimal_mitigation(
+        waste_amount, waste_type, temperature, humidity, storage_days, current_treatment, date
+    )
+    
+    st.header("Prediction Results")
+    st.subheader("Methane Emission")
+    st.write(f"Predicted Methane Emission: {result['predicted_methane_kg']:.2f} kg")
+    
+    st.subheader("Recommended Mitigation")
+    st.write(f"Recommended Strategy: {result['recommended_mitigation']}")
+    
+    st.subheader("Mitigation Probabilities")
+    for k, v in result['mitigation_probabilities'].items():
+        st.write(f"{k}: {v:.2%}")
+
+    # Image-based prediction
+    if uploaded_image:
+        st.subheader("Waste Composition Analysis")
+        image = Image.open(uploaded_image)
+        st.image(image, caption="Uploaded Waste Image", width=300)
+        waste_class, probabilities = classify_waste_image(image)
+        st.write(f"Predicted Waste Type: {waste_class}")
+        st.write("Probabilities:")
+        for k, v in probabilities.items():
+            st.write(f"{k}: {v:.2%}")
+
+# Footer
+st.markdown("---")
+st.markdown("Developed using deep learning for sustainable waste management. Powered by xAI.")
