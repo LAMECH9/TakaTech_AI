@@ -1,1 +1,1 @@
-# methane-mitigation-app
+# TakaTech-AI
