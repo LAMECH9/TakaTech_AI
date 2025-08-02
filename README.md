@@ -2,7 +2,7 @@
 
 **Intelligent Waste Management for Sustainable Agriculture**  
 
-TakaTech AI is an AI-powered waste management platform designed to transform agricultural market waste into organic fertilizer and livestock feed. By integrating deep learning, IoT sensors, and real-time analytics, it reduces methane emissions and supports Kenya’s Climate Smart Agriculture and 2030 emission reduction targets.  
+TakaTech AI is an AI-powered waste management platform designed to transform agricultural market waste into organic fertilizer. By integrating deep learning, IoT sensors, and real-time analytics, it reduces methane emissions and supports Kenya’s Climate Smart Agriculture and 2030 emission reduction targets.  
 
 ---
 
@@ -21,7 +21,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 **TakaTech AI** provides an AI-driven, easy-to-use platform that:  
 
-- Categorizes waste into decomposable matter (for composting) and animal-consumable waste (for livestock feed)  
+- Categorizes waste into decomposable matter (for composting)  
 - Predicts methane emissions based on waste characteristics and suggests mitigation strategies  
 - Converts waste into valuable organic fertilizer and livestock feed, closing the agricultural input loop  
 
