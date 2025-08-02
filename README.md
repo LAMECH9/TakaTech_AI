@@ -115,9 +115,9 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 ## 8. What APIs/datasets does the solution use?  
 
 - **Datasets:**  
-  - Custom dataset of Kenyan market waste images  
-  - Environmental sensor data from pilot markets  
-  - Agricultural production data (5+ years)  
+  - Synthetic dataset of market waste images  
+  - Synthetic Environmental sensor data from pilot markets  
+   
 
 - **APIs:**  
   - Weather APIs for contextual environmental data  
