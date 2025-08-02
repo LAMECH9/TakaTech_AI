@@ -1,4 +1,4 @@
-# TakaTech AI  
+# TakaTech AI 
 
 **Intelligent Waste Management for Sustainable Agriculture**  
 
@@ -23,7 +23,8 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 - Categorizes waste into decomposable matter (for composting)  
 - Predicts methane emissions based on waste characteristics and suggests mitigation strategies  
-- Converts waste into valuable organic fertilizer and  closing the agricultural input loop  
+- Calculates and displays the amount of carbon emissions mitigated for each action  
+- Converts waste into valuable organic fertilizer, closing the agricultural input loop  
 
 ---
 
@@ -37,6 +38,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 **Impact:**  
 - Significant methane emission reductions from markets  
+- Displays **carbon emissions mitigated (kg CO₂e)** directly in the recommendations, allowing users to track their environmental impact  
 - Cost savings through organic fertilizer and livestock feed production  
 - New green economy jobs and improved food security  
 - Direct contribution to Kenya's Climate Smart Agriculture Strategy and NDC goals  
@@ -74,6 +76,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
  [https://preview--takamitigate-wasteai.lovable.app/](https://preview--takamitigate-wasteai.lovable.app/)  
 
 ### **Steps to Use the Platform**  
+
 1. **Access the Dashboard:**  
    - Click the app link above; it will open directly to the dashboard.  
 
@@ -92,10 +95,11 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
    - Click **Predict Optimal Mitigation**  
    - The system will:  
      - Predict methane emissions  
-     - Recommend the best treatment strategies (composting, etc.)  
+     - Recommend the best treatment strategies (composting, feed production, etc.)  
+     - Display the **amount of carbon emissions mitigated (in kg CO₂e)**  
 
 5. **View Recommendations:**  
-   - Access tailored waste management strategies and impact analytics in real-time  
+   - Access tailored waste management strategies, **carbon emission reduction data**, and impact analytics in real-time  
 
 ---
 
