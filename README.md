@@ -1,4 +1,4 @@
-# TakaTech AI 🌱  
+# TakaTech AI  
 
 **Intelligent Waste Management for Sustainable Agriculture**  
 
@@ -71,7 +71,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 ## 6. How the Application Can Be Run (Prototype)  
 
 ### **Link to the App**  
-👉 [https://preview--takamitigate-wasteai.lovable.app/](https://preview--takamitigate-wasteai.lovable.app/)  
+ [https://preview--takamitigate-wasteai.lovable.app/](https://preview--takamitigate-wasteai.lovable.app/)  
 
 ### **Steps to Use the Platform**  
 1. **Access the Dashboard:**  
@@ -122,4 +122,4 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 ---
 
-**TakaTech AI - Transforming agricultural waste into sustainable solutions for Kenya’s climate future 🌍**  
+**TakaTech AI - Transforming agricultural waste into sustainable solutions for Kenya’s climate future **  
