@@ -126,4 +126,4 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 ---
 
-**TakaTech AI - Transforming agricultural waste into sustainable solutions for Kenya’s climate future **  
+TakaTech AI - Transforming agricultural waste into sustainable solutions for Kenya’s climate future   
