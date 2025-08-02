@@ -23,7 +23,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 - Categorizes waste into decomposable matter (for composting)  
 - Predicts methane emissions based on waste characteristics and suggests mitigation strategies  
-- Converts waste into valuable organic fertilizer and livestock feed, closing the agricultural input loop  
+- Converts waste into valuable organic fertilizer and  closing the agricultural input loop  
 
 ---
 
@@ -31,7 +31,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 **Users:**  
 - Market operators  
-- Farmers and livestock keepers  
+- Smallholder farmers  
 - Environmental agencies  
 - Agricultural cooperatives  
 
@@ -92,7 +92,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
    - Click **Predict Optimal Mitigation**  
    - The system will:  
      - Predict methane emissions  
-     - Recommend the best treatment strategies (composting, feed production, etc.)  
+     - Recommend the best treatment strategies (composting, etc.)  
 
 5. **View Recommendations:**  
    - Access tailored waste management strategies and impact analytics in real-time  
