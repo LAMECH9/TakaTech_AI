@@ -8,7 +8,7 @@ TakaTech AI is an AI-powered waste management platform designed to transform agr
 
 ## 1. What problem are you solving?  
 
-Agricultural markets in Kenya generate massive organic waste that is poorly managed, leading to:  
+Agricultural markets in Kenya generate massive Food waste that is poorly managed, leading to:  
 
 - **Environmental Impact:** Methane emissions from decomposing waste  
 - **Economic Loss:** Valuable organic matter is discarded  
@@ -39,7 +39,7 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 **Impact:**  
 - Significant methane emission reductions from markets  
 - Displays **carbon emissions mitigated (kg CO₂e)** directly in the recommendations, allowing users to track their environmental impact  
-- Cost savings through organic fertilizer and livestock feed production  
+- Cost savings through organic fertilizer 
 - New green economy jobs and improved food security  
 - Direct contribution to Kenya's Climate Smart Agriculture Strategy and NDC goals  
 
@@ -114,12 +114,12 @@ Agricultural markets in Kenya generate massive organic waste that is poorly mana
 
 ## 8. What APIs/datasets does the solution use?  
 
-- **Datasets:**  
+- **Datasets:**  for the prototype
   - Synthetic dataset of market waste images  
   - Synthetic Environmental sensor data from pilot markets  
    
 
-- **APIs:**  
+- **APIs:**  (Which will be integrated during scaling)
   - Weather APIs for contextual environmental data  
   - Carbon footprint calculators for emission tracking  
   - Agricultural commodity pricing APIs  
