@@ -1,6 +1,6 @@
 # TakaTech AI 
 
-**Intelligent Waste Management for Sustainable Agriculture**  
+**Intelligent Waste Management for Sustainable Agriculture and Jobs**  
 
 TakaTech AI is an AI-powered waste management platform designed to transform agricultural market waste into organic fertilizer. By integrating deep learning, IoT sensors, and real-time analytics, it reduces methane emissions and supports Kenya’s Climate Smart Agriculture and 2030 emission reduction targets.  
 
