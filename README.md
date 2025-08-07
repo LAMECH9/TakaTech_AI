@@ -8,8 +8,9 @@ TakaTech AI is an AI-powered waste management platform designed to transform agr
 
 ## 1. What problem are you solving?  
 
-Agricultural markets in Kenya generate massive Food waste that is poorly managed, leading to:  
+Agricultural markets in Kenya generate massive Food waste that is poorly managed, leading to:
 
+-**Unemployment:** Lack of job opportunities among kenyan youth and women
 - **Environmental Impact:** Methane emissions from decomposing waste  
 - **Economic Loss:** Valuable organic matter is discarded  
 - **Sustainability Gap:** Lack of circular economy systems  
