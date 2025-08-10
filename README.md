@@ -10,7 +10,7 @@ TakaTech AI is an AI-powered waste management platform designed to transform agr
 
 Agricultural markets in Kenya generate massive Food waste that is poorly managed, leading to:
 
-- **Unemployment:** Lack of job opportunities among kenyan youth and women
+- **Unemployment:** Lack of job opportunities among kenyan youth
 - **Environmental Impact:** Methane emissions from decomposing waste  
 - **Economic Loss:** Valuable organic matter is discarded  
 - **Sustainability Gap:** Lack of circular economy systems  
